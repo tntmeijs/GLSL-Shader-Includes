@@ -27,8 +27,8 @@ Well, besides loading the shader source code from a single file, the loader also
 #version 330 core
 layout (location = 0) in vec3 position;
 
+// Include other files
 #include include/functions.incl
-
 #include include/uniforms.incl
 
 void main()
