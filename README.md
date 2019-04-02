@@ -1,4 +1,4 @@
-# Shadinclude
+# GLSL Shader Includes
 A utility class which allows the end user to make use of the include statement in a shader file.
 This is a C++ class but any programmer that has basic knowledge of his / her programming language of choice, should be able to quickly convert the code to another language within a couple minutes. It is that simple.
 
