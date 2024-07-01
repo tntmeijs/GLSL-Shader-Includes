@@ -89,6 +89,13 @@ public:
 				// Remove the include identifier, this will cause the path to remain
 				lineBuffer.erase(0, includeIndentifier.size());
 
+				// Remove quotation marks from the include-string, in case there are any
+				auto lineBufferQuotationMarkPositions = std::remove(lineBuffer.begin(), lineBuffer.end(), '\"');
+				while(lineBuffer.cend() != lineBufferQuotationMarkPositions) {
+					lineBuffer.erase(lineBufferQuotationMarkPositions, lineBuffer.cend());
+					lineBufferQuotationMarkPositions = std::remove(lineBuffer.begin(), lineBuffer.end(), '\"');
+				}
+
 				// The include path is relative to the current shader file path
 				std::string pathOfThisFile;
 				getFilePath(path, pathOfThisFile);
